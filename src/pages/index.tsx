@@ -1,3 +1,17 @@
 import React from 'react'
+import Link from "next/link";
 
-export default () => (<div>Hello World</div>)
+export default function Home() {
+    return (
+      <div>
+        <ul>
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+        </ul>
+        <h1>Hello Next.js</h1>
+      </div>
+    );
+  }
