@@ -1,9 +1,12 @@
 void cond(long a, long *p)
 {
-	if (p && a > *p)
+	if (p == 0)
 		goto done;
-done:
+	if (*p >= a)
+		goto done;
 	*p = a;
+done:
+	return;
 }
 
 int main()

@@ -1,19 +1,27 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 11, 0	sdk_version 11, 3
-	.globl	_cond                           ## -- Begin function cond
+	.globl	_test                           ## -- Begin function test
 	.p2align	4, 0x90
-_cond:                                  ## @cond
+_test:                                  ## @test
 ## %bb.0:
 	pushq	%rbp
 	movq	%rsp, %rbp
-	testq	%rsi, %rsi
-	je	LBB0_3
+	cmpq	$-4, %rdi
+	jg	LBB0_2
 ## %bb.1:
-	cmpq	%rdi, (%rsi)
-	jge	LBB0_3
-## %bb.2:
-	movq	%rdi, (%rsi)
-LBB0_3:
+	cmpq	%rdx, %rsi
+	cmovgeq	%rdx, %rdi
+	imulq	%rsi, %rdi
+	movq	%rdi, %rax
+	popq	%rbp
+	retq
+LBB0_2:
+	addq	%rdi, %rsi
+	addq	%rdx, %rsi
+	imulq	%rdi, %rdx
+	cmpq	$2, %rdi
+	cmovleq	%rsi, %rdx
+	movq	%rdx, %rax
 	popq	%rbp
 	retq
                                         ## -- End function
@@ -23,12 +31,7 @@ _main:                                  ## @main
 ## %bb.0:
 	pushq	%rbp
 	movq	%rsp, %rbp
-	subq	$16, %rsp
-	movq	-8(%rbp), %rdi
-	leaq	-8(%rbp), %rsi
-	callq	_cond
 	xorl	%eax, %eax
-	addq	$16, %rsp
 	popq	%rbp
 	retq
                                         ## -- End function
