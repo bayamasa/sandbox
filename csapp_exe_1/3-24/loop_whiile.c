@@ -11,5 +11,4 @@ long loop_while(long a, long b)
 
 int main()
 {
-	
 }
