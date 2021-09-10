@@ -21,5 +21,5 @@ int main() {
 
 	cout << maxv << endl;
 
-	return 0
+	return 0;
 }
