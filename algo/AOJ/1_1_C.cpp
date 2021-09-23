@@ -3,11 +3,11 @@
 using namespace std;
 
 int main(){
-	int n;
-	cin >> n;
-
-	cin >> n;
-	n = n * n * n;
-	cout << n << endl;
+	int a, b, area, length;
+	cin >> a >> b;
+	
+	area = a * b;
+	length = (2 * a) + (2 * b);
+	cout << area << " " << length << endl;
 	return (0);
 }
