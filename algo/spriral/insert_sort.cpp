@@ -1,3 +1,4 @@
+// 全体の中の最小値を見つけて、それを端に移動する。
 #include <iostream>
 #include <algorithm>
 
@@ -10,18 +11,19 @@ int main() {
 
 	for(int i = 0; i < n; i++) cin >> R[i];
 
-	for(int i = 0; i < n; i++) 
+	for(int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n - 1; j++)
+		int min = i;
+		for (int j = i; j < n; j++)
 		{
-				// 隣同士の値を比較して、大小関係を基づいて入れ替えを行う
-				if (R[j] > R[j + 1])
-				{
-					int tmp = R[j];
-					R[j] = R[j + 1];
-					R[j + 1] = tmp;
-				}
+			if (R[min] > R[j])
+			{
+				min = j;
+			}
 		}
+		int tmp = R[i];
+		R[i] = R[min];
+		R[min] = tmp;
 	}
 
 	for (int k=0; k < n; k++)

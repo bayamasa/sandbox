@@ -10,18 +10,17 @@ int main() {
 
 	for(int i = 0; i < n; i++) cin >> R[i];
 
-	for(int i = 0; i < n; i++) 
+	for(int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n - 1; j++)
+		int v = R[i];
+		int j = i - 1;
+		while (j >= 0 && R[j] > v)
 		{
-				// 隣同士の値を比較して、大小関係を基づいて入れ替えを行う
-				if (R[j] > R[j + 1])
-				{
-					int tmp = R[j];
-					R[j] = R[j + 1];
-					R[j + 1] = tmp;
-				}
+			R[j + 1] = R[j];
+			R[j] = v;
+			j--;
 		}
+		
 	}
 
 	for (int k=0; k < n; k++)

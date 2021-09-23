@@ -1,3 +1,4 @@
+// 2回目のfor文を回すときに0から回していくのが特徴
 #include <iostream>
 #include <algorithm>
 
@@ -10,17 +11,16 @@ int main() {
 
 	for(int i = 0; i < n; i++) cin >> R[i];
 
-	for(int i = 0; i < n; i++) 
+	for(int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n - 1; j++)
+		for (int j = 0; j < n; j++)
 		{
-				// 隣同士の値を比較して、大小関係を基づいて入れ替えを行う
-				if (R[j] > R[j + 1])
-				{
-					int tmp = R[j];
-					R[j] = R[j + 1];
-					R[j + 1] = tmp;
-				}
+			if (R[i] > R[j])
+			{
+				int tmp = R[i];
+				R[i] = R[j];
+				R[j] = tmp;
+			}
 		}
 	}
 
