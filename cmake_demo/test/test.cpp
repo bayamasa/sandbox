@@ -3,7 +3,8 @@
 
 extern "C" int main();
 
-TEST(cmake_demo eq_test)
+TEST(cmake_demo, eq_test)
 {
-	ASSERT_EQ(main(), )
+	ASSERT_EQ(main(), printf("hello world"));
 }
+
