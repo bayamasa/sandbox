@@ -3,12 +3,10 @@ project(hello_world C CXX)
 
 find_package(GTest REQUIRED)
 
-enable_testing()
-
 add_executable(
 	main
 	print.c
-	test/test.cpp
+	test/gtest.cpp
 )
 
 target_link_libraries(
@@ -16,4 +14,4 @@ target_link_libraries(
 	GTest::Main
 )
 
-include(GoogleTest)
+# include(GoogleTest)

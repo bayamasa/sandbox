@@ -2,6 +2,5 @@
 
 char *print()
 {
-	char *hello ="hello"; 
-	return hello;
+	return "hello world";
 }
