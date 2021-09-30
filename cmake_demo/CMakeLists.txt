@@ -6,7 +6,9 @@ find_package(GTest REQUIRED)
 add_executable(
 	main
 	print.c
+	stdout.c
 	test/gtest.cpp
+	
 )
 
 target_link_libraries(
