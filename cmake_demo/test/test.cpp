@@ -1,10 +1,10 @@
 #include "gtest/gtest.h"
 #include <stdio.h>
 
-extern "C" int main();
+extern "C" char *print();
 
 TEST(cmake_demo, eq_test)
 {
-	ASSERT_EQ(main(), printf("hello world"));
+	ASSERT_STREQ("hello", print());
 }
 
