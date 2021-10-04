@@ -31,6 +31,8 @@ class Perceptron(object):
 				# 重みの更新
 				self.w_[0] += update
 				# 重みの更新が0でない場合は誤分類としてカウント
+				# 結局predictの部分が、targetと一致していないということは、値が間違っているということ。
+				# updateの値が負に傾いたら、振り子のように次は正の方向に向かって重みが更新される。
 				errors += int(update != 0.0)
 			self.errors_.append(errors)
 		return self;
@@ -39,6 +41,7 @@ class Perceptron(object):
 	def net_input(self, X):
 			# https://deepage.net/features/numpy-dot.html
 			# dot関数: ベクトルの内積、行列の積を計算する
+			# 重みの転置行列と各要素の積 + 閾値
 			return np.dot(X, self.w_[1:]) + self.w_[0]
 
 	# 閾値を求める
