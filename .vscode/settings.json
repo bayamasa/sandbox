@@ -4,4 +4,7 @@
 		"iostream": "cpp",
 		"sstream": "cpp"
 	},
+	"python.analysis.extraPaths": [
+		"./ML/own_directly/ch2"
+	],
 }
