@@ -21,7 +21,7 @@ import (
 	"log"
 
 	ebiten "github.com/hajimehoshi/ebiten/v2"
-	"main/2048"
+	"github.com/bayamasa/sandbox/game/2048/2048"
 )
 
 func main() {
