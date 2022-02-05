@@ -1,5 +1,6 @@
 from sklearn import impute
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import pandas as pd
 from io import StringIO
@@ -18,3 +19,4 @@ print(df.fillna(df.mean()))
 
 # impute_data = imr.transform(df.values)
 # print(impute_data)
+
