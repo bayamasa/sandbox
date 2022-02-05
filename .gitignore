@@ -2,3 +2,4 @@ a.out
 build/
 python*/
 main
+target
