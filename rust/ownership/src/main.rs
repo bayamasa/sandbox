@@ -1,11 +1,8 @@
 fn main() {
-    let mut s1 = gives_ownership();         // gives_ownershipは、戻り値をs1に
-                                        // ムーブする
-	println!("{}", s1);
-    s1 = String::from("helloa");     // s2がスコープに入る
-	println!("{}", s1);
-    let s3 = takes_and_gives_back(s1);  // s2はtakes_and_gives_backにムーブされ
-                                        // 戻り値もs3にムーブされる
+	let x = 5;  // s2はtakes_and_gives_backにムーブされ
+    let x = 19;
+	
+	println!("{}", x);  // 戻り値もs3にムーブされる
 } // ここで、s3はスコープを抜け、ドロップされる。s2もスコープを抜けるが、ムーブされているので、
   // 何も起きない。s1もスコープを抜け、ドロップされる。
 
